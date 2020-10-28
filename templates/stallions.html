@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stallions</title>
+</head>
+<body>
+    {% for stallion in stallions %}
+        {{ stallion.name }}<br>
+        {{ stallion.birth_year }}<br>
+        {{ stallion.gender }}<br>
+        {{ stallion.breed }}<br>
+        {{ stallion.country }}<br>
+        {{ stallion.owner }}<br>
+        {{ stallion.number_of_offsprings }}<br>
+        {{ stallion.achievements }}<br>
+    {% endfor %}
+</body>
+</html>
