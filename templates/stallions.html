@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stallions</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for stallion in stallions %}
         {{ stallion.name }}<br>
         {{ stallion.birth_year }}<br>
@@ -16,5 +11,5 @@
         {{ stallion.number_of_offsprings }}<br>
         {{ stallion.achievements }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
