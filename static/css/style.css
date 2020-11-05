@@ -1,0 +1,42 @@
+body {
+    font-family: montserrat;
+}
+
+/* --------------- Navbar ---------------*/
+
+.navbar-nav > li{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bg-light {
+    background-color: #FF9292!important;
+}
+
+a.navbar-brand, a.nav-link {
+    color: white!important;
+}
+
+button.red {
+    background: #FF9292;
+    border-color: white;
+    border-radius: 10%;
+}
+
+button.white {
+    background: white;
+    border-color: white;
+    border-radius: 10%;
+}
+
+a.nav-link.white {
+    color: #FF9292!important;
+}
+
+.dropdown-menu {
+    background: #FF9292;
+}
+
+.dropdown-item {
+    color: white;
+}
