@@ -42,6 +42,16 @@ def dimma():
     return render_template("dimma.html")
 
 
+@app.route("/offspringAI")
+def offspringAI():
+    return render_template("offspringAI.html")
+
+
+@app.route("/offspringJR")
+def offspringJR():
+    return render_template("offspringJR.html")
+
+
 @app.route("/addOffspring")
 def addOffspring():
     return render_template("addOffspring.html")
