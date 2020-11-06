@@ -52,6 +52,11 @@ def offspringJR():
     return render_template("offspringJR.html")
 
 
+@app.route("/offspringSZ")
+def offspringSZ():
+    return render_template("offspringSZ.html")
+
+
 @app.route("/addOffspring")
 def addOffspring():
     return render_template("addOffspring.html")
