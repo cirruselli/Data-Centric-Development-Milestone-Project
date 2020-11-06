@@ -57,6 +57,11 @@ def logOut():
     return render_template("logOut.html")
 
 
+@app.route("/logIn")
+def logIn():
+    return render_template("logIn.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
