@@ -22,10 +22,14 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/")
 @app.route("/balegro")
 def balegro():
     return render_template("balegro.html")
+
+
+@app.route("/sunrise")
+def sunrise():
+    return render_template("sunrise.html")
 
 
 if __name__ == "__main__":
