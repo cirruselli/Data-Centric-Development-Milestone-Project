@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -30,6 +30,11 @@ def balegro():
 @app.route("/sunrise")
 def sunrise():
     return render_template("sunrise.html")
+
+
+@app.route("/offset")
+def offset():
+    return render_template("offset.html")
 
 
 if __name__ == "__main__":
