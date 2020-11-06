@@ -12,60 +12,63 @@
     <title>HorseNet</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">HorseNet</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="{{ url_for('home') }}">HorseNet</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
 	
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mx-auto mx-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Home</a>
-				</li>
-                <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">
-						Stallions
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Balegro</a>
-						<a class="dropdown-item" href="#">Sunrise</a>
-						<a class="dropdown-item" href="#">Offset</a>
-						<a class="dropdown-item" href="#">Dimma</a>
-                    </div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">
-						Offsprings
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">A-I</a>
-						<a class="dropdown-item" href="#">J-R</a>
-						<a class="dropdown-item" href="#">S-Z</a>
-					</div>
-				</li>
-                <li class="nav-item active">
-					<a class="nav-link" href="#">Add Offspring</a>
-				</li>
-                <li class="nav-item active">
-					<a class="nav-link" href="#">Search</a>
-				</li>
-			</ul>
-            <ul>
-                <button class="red ml-auto">
-					<a class="nav-link" href="#">Log In</a>
-				</button>
-                <button class="white ml-auto">
-					<a class="nav-link white" href="#">Register</a>
-				</button>
-                <button class="white ml-auto">
-					<a class="nav-link white" href="#">Log Out</a>
-				</button>
-			</ul>
-		</div>
-	</nav>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mx-auto mx-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Stallions
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="{{ url_for('balegro') }}">Balegro</a>
+							<a class="dropdown-item" href="#">Sunrise</a>
+							<a class="dropdown-item" href="#">Offset</a>
+							<a class="dropdown-item" href="#">Dimma</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Offsprings
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">A-I</a>
+							<a class="dropdown-item" href="#">J-R</a>
+							<a class="dropdown-item" href="#">S-Z</a>
+						</div>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Add Offspring</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Search</a>
+					</li>
+				</ul>
+				<ul>
+                    <button class="white ml-auto">
+						<a class="nav-link white" href="#">Log Out</a>
+					</button>
+					<button class="red ml-auto">
+						<a class="nav-link" href="#">Log In</a>
+					</button>
+					<button class="white ml-auto">
+						<a class="nav-link white" href="#">Register</a>
+					</button>
+					
+				</ul>
+			</div>
+		</nav>
+	</header>
     {% block content %}
     {% endblock %}
 

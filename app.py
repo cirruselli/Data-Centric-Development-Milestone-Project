@@ -17,10 +17,15 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_stallions")
-def get_stallions():
-    stallions = mongo.db.stallions.find()
-    return render_template("stallions.html", stallions=stallions)
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/")
+@app.route("/balegro")
+def balegro():
+    return render_template("balegro.html")
 
 
 if __name__ == "__main__":
