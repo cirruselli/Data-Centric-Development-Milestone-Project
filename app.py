@@ -52,6 +52,11 @@ def search():
     return render_template("search.html")
 
 
+@app.route("/logOut")
+def logOut():
+    return render_template("logOut.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
