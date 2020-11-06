@@ -1,5 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100 carousel-resize" src="{{ url_for('static', filename = 'images/balegro.png') }}" alt="First slide">
+	            <div class="carousel-caption d-none d-md-block">
+				    <h5>Balegro</h5>
+			    </div>
+            </div>
+			<div class="carousel-item">
+				<img class="d-block w-100 carousel-resize" src="{{ url_for('static', filename = 'images/sunrise.png') }}" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Sunrise</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+				<img class="d-block w-100 carousel-resize" src="{{ url_for('static', filename = 'images/offset.png') }}" alt="Fourth slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Offset</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+				<img class="d-block w-100 carousel-resize" src="{{ url_for('static', filename = 'images/dimma.png') }}" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Dimma</h5>
+                </div>
+            </div>
+		</div>
+			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+	</div>
+    <h3>Statistics over how many offsprings each stallion has from the total of offsprings</h3>
 
+    <div class="white-box">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress-name">Balegro:</span>
+            </div>
+        </div>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+				aria-valuemax="100">
+		        <span class="progress-name">Sunrise:</span>
+            </div>
+        </div>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+				aria-valuemax="100">
+                <span class="progress-name">Offset:</span>
+            </div>
+		</div>
+        <div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+				aria-valuemax="100">
+                <span class="progress-name">Dimma:</span>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
