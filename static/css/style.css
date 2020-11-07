@@ -93,6 +93,26 @@ div.white-box {
     color: black;
 }
 
+/*----------------images----------------*/
+
+img.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*--------------Information text -----------*/
+
+.center {
+    margin-top: 60px;
+    margin-bottom: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 /*--------------- media queries-------------*/
 
 @media only screen and (max-width: 600px) {
@@ -124,12 +144,31 @@ div.white-box {
         margin: 0px;
         margin-top: 30px;
         height: 25px;
-}
+    } 
+}    
 
 @media only screen and (max-width: 600px) {
     .progress-name {
-        font-size: 15px;
-        
-}
+        font-size: 15px;  
+    }
 }
 
+@media only screen and (max-width: 600px) {
+    h4 {
+        font-size: 15px;  
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    img.center-image {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .center {
+        margin-left: 10px;
+        margin-right: 10px;
+         
+    }
+}
