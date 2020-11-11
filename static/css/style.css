@@ -22,6 +22,7 @@ button.red {
     background: #FF9292;
     border-color: white;
     border-radius: 10%;
+    color: white;
 }
 
 button.white {
@@ -56,10 +57,20 @@ a.nav-link.white {
 
 /*---------------- headers ---------------*/
 
-h3 {
+h1, h3{
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 50px;
     position: relative;
+}
+
+.center {
+    margin-top: 60px;
+    margin-bottom: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 /*-----------------Statistics--------------*/
@@ -102,15 +113,18 @@ img.center-image {
     width: 50%;
 }
 
-/*--------------Information text -----------*/
+/*---------------space for bottom of page------------- */
 
-.center {
-    margin-top: 60px;
-    margin-bottom: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.space {
+    padding-top: 200px;
+}
+
+/*-------------- footer -----------------*/
+
+.footer-copyright {
+    background-color: #FF9292;
+    color: white;
+    font-size: 12px;
 }
 
 /*--------------- media queries-------------*/
@@ -123,7 +137,7 @@ img.center-image {
 }
 
 @media only screen and (max-width: 600px) {
-    h3 {
+    h1, h3 {
         font-size: 20px;
         margin-top: 40px;
     }
@@ -172,3 +186,15 @@ img.center-image {
          
     }
 }
+
+/*adding a css script for testing of offspring Tab--*/
+/* I dont remember from where I copied this */
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+}
+
+
+
