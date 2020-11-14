@@ -69,16 +69,6 @@ def search():
     return render_template("search.html")
 
 
-@app.route("/logOut")
-def logOut():
-    return render_template("logOut.html")
-
-
-@app.route("/logIn")
-def logIn():
-    return render_template("logIn.html")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -100,6 +90,37 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
+
+
+@app.route("/logIn", methods=["GET", "POST"])
+def logIn():
+    if request.method == "POST":
+        # check if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Hello and welcome, {}".format(request.form.get("username")))
+            else:
+                # invalid password match
+                flash("Incorrect username and/or password")
+                return redirect(url_for("logIn"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect username and/or password")
+            return redirect(url_for("logIn"))
+
+    return render_template("logIn.html")
+
+
+@app.route("/logOut")
+def logOut():
+    return render_template("logOut.html")
 
 
 if __name__ == "__main__":
