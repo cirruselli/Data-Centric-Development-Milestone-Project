@@ -29,6 +29,11 @@ button.white {
     background: white;
     border-color: white;
     border-radius: 10%;
+    color: #FF9292;
+}
+
+.btn{
+    max-width:125px;
 }
 
 a.nav-link.white {

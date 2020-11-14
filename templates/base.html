@@ -70,8 +70,25 @@
 		</nav>
 	</header>
 
-    {% block content %}
-    {% endblock %}
+    <section>
+        <!-- flash messages,
+        I've copied it from https://pythonprogramming.net/flash-flask-tutorial/-->
+		{% with messages = get_flashed_messages() %}
+		    {% if messages %}
+		        {% for message in messages %}
+		            <div class="alert text-light bg-dark text-center alert-dismissible" role="alert">
+			            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			            {{message}}
+		            </div>
+		        {% endfor %}
+		    {% endif %}
+		{% endwith %}
+    </section>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <footer> 
 		<div class="footer-copyright text-center fixed-bottom py-3">© 2020 Copyright HorseNet
