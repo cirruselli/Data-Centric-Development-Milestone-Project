@@ -120,6 +120,8 @@ def logIn():
 
 @app.route("/logOut")
 def logOut():
+    flash("You have been logged out")
+    session.pop("user")
     return render_template("logOut.html")
 
 
