@@ -3,14 +3,13 @@
 
     <img class="center-image" src="{{ url_for('static', filename = 'images/sunrise2.jpg') }}" alt="sunrise" />
     <div class="center">
-        <h4>Name:</h4>
-        <h4>Birth Year:</h4>
-        <h4>Gender:</h4>
-        <h4>Breed:</h4>
-        <h4>Country:</h4>
-        <h4>Owner:</h4>
-        <h4>Number of offsprings:</h4>
-        <h4>Achievements:</h4>
-    </div>
+        <h4>Name: {{stallion.name}}</h4>
+        <h4>Birth Year: {{ stallion.birth_year }}</h4>
+        <h4>Gender: {{ stallion.gender }}</h4>
+        <h4>Breed: {{ stallion.breed }}</h4>
+        <h4>Country: {{ stallion.country }}</h4>
+        <h4>Owner: {{ stallion.owner }}</h4>
+        <h4>Number of offsprings: {{ stallion.number_of_offsprings }}</h4>
+        <h4>Achievements: {{ stallion.achievements }} </h4>
 
 {% endblock %}

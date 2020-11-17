@@ -17,6 +17,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+for x in mongo.db.list_collection_names():
+    print(x+"T")
+
 
 @app.route("/")
 @app.route("/home")
@@ -26,22 +29,26 @@ def home():
 
 @app.route("/balegro")
 def balegro():
-    return render_template("balegro.html")
+    stallion = mongo.db.stallions.find_one({"name": "Balegro"})
+    return render_template("balegro.html", stallion=stallion)
 
 
 @app.route("/sunrise")
 def sunrise():
-    return render_template("sunrise.html")
+    stallion = mongo.db.stallions.find_one({"name": "sunrise"})
+    return render_template("sunrise.html", stallion=stallion)
 
 
 @app.route("/offset")
 def offset():
-    return render_template("offset.html")
+    stallion = mongo.db.stallions.find_one({"name": "offset"})
+    return render_template("offset.html", stallion=stallion)
 
 
 @app.route("/dimma")
 def dimma():
-    return render_template("dimma.html")
+    stallion = mongo.db.stallions.find_one({"name": "dimma"})
+    return render_template("dimma.html", stallion=stallion)
 
 
 @app.route("/offspringAI")

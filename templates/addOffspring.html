@@ -1,5 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- I dont remember from where I copied this.-->
+	<div class="container mt-5">
+		<h1 class="text-center">Add Offspring</h1>
+		<div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4 mt-5">
+			<form method="POST" enctype="multipart/form-data">
+				<div class="form-group">
+					<label><strong>Upload Files</strong></label>
+					<div class="custom-file">
+						<input type="file" name="files[]" multiple class="custom-file-input form-control" id="customFile">
+						<label class="custom-file-label" for="customFile">Choose file</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="button" name="upload" value="upload" id="upload" class="btn btn-block btn-dark"><i class="fa fa-fw fa-upload"></i> Upload</button>
+				</div>
+			</form>
+		</div>
+    </div>
 
+<!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_button_elements&stacked=h  -->
+
+	<div class="container-fluid text-center mt-5">
+		<div>
+			<button type="button" class="btn btn-danger red mx-2">Cancel Offspring</button>
+			<button type="button" class="btn btn-basic white mx-2">Edit Offspring</button>
+			<button type="button" class="btn btn-danger red mx-2">Delete Offspring</button>
+		</div>
+	</div>
+    <div class="space">
+    </div>
 {% endblock %}
