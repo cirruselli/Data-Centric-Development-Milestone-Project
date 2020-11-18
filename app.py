@@ -17,9 +17,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-for x in mongo.db.list_collection_names():
-    print(x+"T")
-
 
 @app.route("/")
 @app.route("/home")
@@ -66,9 +63,25 @@ def offspringSZ():
     return render_template("offspringSZ.html")
 
 
-@app.route("/addOffspring")
+@app.route("/addOffspring", methods=["GET", "POST"])
 def addOffspring():
-    return render_template("addOffspring.html")
+    if request.method == "POST":
+        addOffspring = {
+            "name": request.form.get("name"),
+            "birth_year": request.form.get("birth_year"),
+            "gender": request.form.get("gender"),
+            "breed": request.form.get("breed"),
+            "country": request.form.get("country"),
+            "owner": request.form.get("owner"),
+            "achievements": request.form.get("achievements"),
+            "created_by": session["user"]
+        }
+        mongo.db.offsprings.insert_one(addOffspring)
+        flash("Offspring successfully added")
+        return redirect(url_for("addOffspring"))
+
+    offspring = mongo.db.offsprings.find().sort("name", 1)
+    return render_template("addOffspring.html", offspring=offspring)
 
 
 @app.route("/search")
