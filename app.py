@@ -70,6 +70,8 @@ def addOffspring():
             "name": request.form.get("name"),
             "birth_year": request.form.get("birth_year"),
             "gender": request.form.get("gender"),
+            "father": request.form.get("father"),
+            "mother": request.form.get("mother"),
             "breed": request.form.get("breed"),
             "country": request.form.get("country"),
             "owner": request.form.get("owner"),

@@ -5,38 +5,46 @@
 		<form method="POST" action="{{ url_for('addOffspring') }}">
 			<div class="form-group">
 				<label for="name">Name</label>
-				<input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter name" required>
+				<input type="text" class="form-control" name="name" id="name" minlength="1" maxlength="100" aria-describedby="name" placeholder="Enter name" required>
 			</div>
 			<div class="form-group">
 				<label for="birth_year">Birth Year</label>
-				<input type="text" class="form-control" name="birth_year" id="birth_year" placeholder="Enter birth year" required>
+				<input type="text" class="form-control" name="birth_year" id="birth_year" minlength="1" maxlength="20" placeholder="Enter birth year, e.g. 2012" required>
 		  </div>
           <div class="form-group">
 				<label for="gender">Gender</label>
-				<input type="text" class="form-control" name="gender" id="gender" aria-describedby="gender" placeholder="Enter gender" required>
+				<input type="text" class="form-control" name="gender" id="gender" minlength="1" maxlength="20" aria-describedby="gender" placeholder="Enter gender" required>
+			</div>
+            <div class="form-group">
+				<label for="father">Father</label>
+				<input type="text" class="form-control" name="father" id="father" minlength="1" maxlength="200" aria-describedby="name" placeholder="Enter father" required>
 			</div>
 			<div class="form-group">
+				<label for="mother">Mother</label>
+				<input type="text" class="form-control" name="mother" id="mother" minlength="1" maxlength="200" placeholder="Enter mother" required>
+		  </div>
+			<div class="form-group">
 				<label for="breed">Breed</label>
-				<input type="text" class="form-control" name="breed" id="breed" placeholder="Enter breed" required>
+				<input type="text" class="form-control" name="breed" id="breed" minlength="1" maxlength="200" placeholder="Enter breed" required>
 		  </div>
           <div class="form-group">
 				<label for="country">Country</label>
-				<input type="text" class="form-control" name="country" id="country" aria-describedby="country" placeholder="Enter country" required>
+				<input type="text" class="form-control" name="country" id="country" minlength="1" maxlength="200" aria-describedby="country" placeholder="Enter country" required>
 			</div>
             <div class="form-group">
 				<label for="owner">Owner</label>
-				<input type="text" class="form-control" name="owner" id="owner" aria-describedby="owner" placeholder="Enter owner" required>
+				<input type="text" class="form-control" name="owner" id="owner" minlength="1" maxlength="200" aria-describedby="owner" placeholder="Enter owner" required>
 			</div>
 			<div class="form-group">
 				<label for="achievements">Achievements</label>
-				<input type="text" class="form-control" name="achievements" id="achievements" placeholder="Enter achievements">
+				<input type="text" class="form-control" name="achievements" id="achievements" minlength="1" maxlength="500" placeholder="Enter achievements" required>
 		  </div>
 
             <div class="container-fluid text-center mt-5">
                 <div>
                     <button type="submit" class="btn btn-basic white mx-2">Upload Offspring</button>
                     <button onclick="cancelOffspring()" type="button" class="btn btn-danger red mx-2">Cancel Offspring</button>
-                    <button type="button" class="btn btn-basic white mx-2">Edit Offspring</button>
+                    <a href="" class="btn btn-basic white mx-2">Edit Offspring</a>
                     <button type="button" class="btn btn-danger red mx-2">Delete Offspring</button>
                 </div>
             </div>
