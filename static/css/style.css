@@ -18,24 +18,6 @@ a.navbar-brand, a.nav-link {
     color: white!important;
 }
 
-button.red {
-    background: #FF9292;
-    border-color: white;
-    border-radius: 10%;
-    color: white;
-}
-
-button.white {
-    background: white;
-    border-color: white;
-    border-radius: 10%;
-    color: #FF9292;
-}
-
-.btn{
-    max-width:125px;
-}
-
 a.nav-link.white {
     color: #FF9292!important;
 }
@@ -46,6 +28,28 @@ a.nav-link.white {
 
 .dropdown-item {
     color: white;
+}
+
+/* -----------buttons --------*/
+
+.red {
+    background: #FF9292;
+    border-color: white;
+    border-radius: 10%;
+    color: white;
+    margin: 5px;
+}
+
+.white {
+    background: white;
+    border-color: white;
+    border-radius: 10%;
+    color: #FF9292;
+    margin: 5px;
+}
+
+.btn{
+    max-width:125px;
 }
 
 /*---------------carousel -----------*/

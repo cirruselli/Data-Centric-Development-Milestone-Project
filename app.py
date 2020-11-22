@@ -66,7 +66,7 @@ def offspringSZ():
 @app.route("/addOffspring", methods=["GET", "POST"])
 def addOffspring():
     if request.method == "POST":
-        addOffspring = {
+        offspring = {
             "name": request.form.get("name"),
             "birth_year": request.form.get("birth_year"),
             "gender": request.form.get("gender"),
@@ -78,12 +78,43 @@ def addOffspring():
             "achievements": request.form.get("achievements"),
             "created_by": session["user"]
         }
-        mongo.db.offsprings.insert_one(addOffspring)
+        mongo.db.offsprings.insert_one(offspring)
         flash("Offspring successfully added")
         return redirect(url_for("addOffspring"))
 
+    offsprings = mongo.db.offsprings.find().sort("name", 1)
+    return render_template("addOffspring.html", offsprings=offsprings)
+
+
+@app.route("/editOffspring/<offspring_id>", methods=["GET", "POST"])
+def editOffspring(offspring_id):
+    if request.method == "POST":
+        submit = {
+            "name": request.form.get("name"),
+            "birth_year": request.form.get("birth_year"),
+            "gender": request.form.get("gender"),
+            "father": request.form.get("father"),
+            "mother": request.form.get("mother"),
+            "breed": request.form.get("breed"),
+            "country": request.form.get("country"),
+            "owner": request.form.get("owner"),
+            "achievements": request.form.get("achievements"),
+            "created_by": session["user"]
+        }
+        mongo.db.offsprings.update({"_id": ObjectId(offspring_id)}, submit)
+        flash("Offspring successfully updated")
+
+    addOffspring = mongo.db.offsprings.find_one({"_id": ObjectId(offspring_id)})
+    offsprings = mongo.db.offsprings.find().sort("name", 1)
+    return render_template("editOffspring.html", addOffspring=addOffspring, offsprings=offsprings)
+
+
+@app.route("/editOffspring/<offspringID>", methods=["GET", "POST"])
+def edit_offspring(offspringID):
+    editOffspring = mongo.db.offsprings.find_one({"_id": ObjectId("5fb66c3fc2c43c4867dce64a")})
+
     offspring = mongo.db.offsprings.find().sort("name", 1)
-    return render_template("addOffspring.html", offspring=offspring)
+    return render_template("editOffspring.html", editOffspring=editOffspring, offspring=offspring)
 
 
 @app.route("/search")

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-		<h1 class="text-center">Add Offspring</h1>
+		<h1 class="text-center">Edit Offspring</h1>
 
-		<form method="POST" action="{{ url_for('addOffspring') }}">
+		<form method="POST" action="{{ url_for('editOffspring', offspring_id=addOffspring._id) }}">
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" class="form-control" name="name" id="name" minlength="1" maxlength="100" aria-describedby="name" placeholder="Enter name" required>
@@ -42,10 +42,8 @@
 
             <div class="container-fluid text-center mt-5">
                 <div>
-                    <button type="submit" class="btn btn-basic white mx-2">Upload Offspring</button>
-                    <button onclick="cancelOffspring()" type="button" class="btn btn-danger red mx-2">Cancel Offspring</button>
-                    <a href="{{ url_for('editOffspring', offspring_id=addOffspring._id) }}" class="btn btn-basic white mx-2">Edit Offspring</a>
-                    <button type="button" class="btn btn-danger red mx-2">Delete Offspring</button>
+                    <button type="submit" class="btn btn-basic white mx-2">Edit Offspring</button>
+                    <a href="{{ url_for('addOffspring') }}" class="btn btn-danger red mx-2">Cancel Offspring</button>
                 </div>
             </div>
             <div class="space">
