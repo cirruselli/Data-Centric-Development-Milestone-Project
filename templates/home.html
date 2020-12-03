@@ -39,29 +39,13 @@
     <h3>Statistics over how many offsprings each stallion has from the total of offsprings</h3>
 
     <div class="white-box">
+        {% for stallion in horsesStat %}
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                <span class="progress-name">Balegro:</span>
+			<div class="progress-bar" role="progressbar" style="width: {{ stallion[1] }}%" aria-valuenow="{{ stallion[1] }}" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress-name">{{ stallion[0] }}: {{ stallion[1] }}%</span>
             </div>
         </div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-				aria-valuemax="100">
-		        <span class="progress-name">Sunrise:</span>
-            </div>
-        </div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-				aria-valuemax="100">
-                <span class="progress-name">Offset:</span>
-            </div>
-		</div>
-        <div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-				aria-valuemax="100">
-                <span class="progress-name">Dimma:</span>
-            </div>
-        </div>
+		{% endfor %}
     </div>
 
 {% endblock %}

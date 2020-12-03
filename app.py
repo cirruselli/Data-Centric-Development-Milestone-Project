@@ -21,12 +21,27 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    stallions = mongo.db.stallions.find()  # Get all Stallions in db.
+    # Total Number of offsprings to devide by.
+    totNumberOffspring = mongo.db.offsprings.find().count()
+    # offsprings = mongo.db.offsprings.find()  # Get all Offspring in db.
+
+    print(totNumberOffspring)
+    horsesStat = []  # Init an empty array to save Stallions
+    for horse in stallions:
+        ownOffspring = mongo.db.offsprings.find(
+            {"father": horse["name"]}).count()
+        procent = ownOffspring / totNumberOffspring
+        # Save stallion with it's procent of tot.Offsprings in
+        # an array that's sent to the webfront.
+        horsesStat.append([horse["name"].capitalize(), round(procent * 100, 1)])
+
+    return render_template("home.html", horsesStat=horsesStat)
 
 
 @app.route("/balegro")
 def balegro():
-    stallion = mongo.db.stallions.find_one({"name": "Balegro"})
+    stallion = mongo.db.stallions.find_one({"name": "balegro"})
     return render_template("balegro.html", stallion=stallion)
 
 
@@ -50,7 +65,23 @@ def dimma():
 
 @app.route("/offspringAI")
 def offspringAI():
-    return render_template("offspringAI.html")
+    stallions = mongo.db.stallions.find()  # Hingstar
+    # stallion_id = stallions["_id"]
+    offsprings = mongo.db.offsprings.find()  # Föl
+    # foal_id = offsprings["_id"]
+
+    # mongodb.find_all(stallions) = this will find all stallions
+    # we need to pass these results into the template
+    # (see line 48 stallion=stallion)
+    # HTML SECTION
+    # Use a for loop to render offspring to template
+    # { % for foal in offsprings % }
+    # <div>foal.name</div>
+    # <button href="/edit/foal._id">Foal name</button> ....
+    # { % endfor %}
+    #
+    # .update({_id: "one"})
+    return render_template("offspringAI.html", stallions=stallions, offsprings=offsprings)
 
 
 @app.route("/offspringJR")
@@ -83,6 +114,8 @@ def addOffspring():
         return redirect(url_for("addOffspring"))
 
     offsprings = mongo.db.offsprings.find().sort("name", 1)
+    stallions = mongo.db.stallions.find().sort("name", 1)
+    print(stallions)
     return render_template("addOffspring.html", offsprings=offsprings)
 
 
