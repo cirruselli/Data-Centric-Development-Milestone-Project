@@ -25,8 +25,6 @@ def home():
     # Total Number of offsprings to devide by.
     totNumberOffspring = mongo.db.offsprings.find().count()
     # offsprings = mongo.db.offsprings.find()  # Get all Offspring in db.
-
-    print(totNumberOffspring)
     horsesStat = []  # Init an empty array to save Stallions
     for horse in stallions:
         ownOffspring = mongo.db.offsprings.find(
@@ -42,25 +40,37 @@ def home():
 @app.route("/balegro")
 def balegro():
     stallion = mongo.db.stallions.find_one({"name": "balegro"})
-    return render_template("balegro.html", stallion=stallion)
+    offspring = mongo.db.offsprings.find(
+        {"father": "balegro"}).count()
+    return render_template(
+        "balegro.html", stallion=stallion, offspring=offspring)
 
 
 @app.route("/sunrise")
 def sunrise():
     stallion = mongo.db.stallions.find_one({"name": "sunrise"})
-    return render_template("sunrise.html", stallion=stallion)
+    offspring = mongo.db.offsprings.find(
+        {"father": "sunrise"}).count()
+    return render_template(
+        "sunrise.html", stallion=stallion, offspring=offspring)
 
 
 @app.route("/offset")
 def offset():
     stallion = mongo.db.stallions.find_one({"name": "offset"})
-    return render_template("offset.html", stallion=stallion)
+    offspring = mongo.db.offsprings.find(
+        {"father": "offset"}).count()
+    return render_template(
+        "offset.html", stallion=stallion, offspring=offspring)
 
 
 @app.route("/dimma")
 def dimma():
     stallion = mongo.db.stallions.find_one({"name": "dimma"})
-    return render_template("dimma.html", stallion=stallion)
+    offspring = mongo.db.offsprings.find(
+        {"father": "dimma"}).count()
+    return render_template(
+        "dimma.html", stallion=stallion, offspring=offspring)
 
 
 @app.route("/offspringAI")
@@ -116,7 +126,7 @@ def addOffspring():
     offsprings = mongo.db.offsprings.find().sort("name", 1)
     stallions = mongo.db.stallions.find().sort("name", 1)
     print(stallions)
-    return render_template("addOffspring.html", offsprings=offsprings)
+    return render_template("addOffspring.html", offsprings=offsprings, stallions=stallions)
 
 
 @app.route("/editOffspring/<offspring_id>", methods=["GET", "POST"])
