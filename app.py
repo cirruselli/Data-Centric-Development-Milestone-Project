@@ -76,24 +76,10 @@ def dimma():
 
 @app.route("/offspringAI")
 def offspringAI():
-    stallions = mongo.db.stallions.find()
-    # stallion_id = stallions["_id"]
-    offsprings = mongo.db.offsprings.find()
-    # foal_id = offsprings["_id"]
+    offsprings = mongo.db.offsprings.find().sort("name", 1)
 
-    # mongodb.find_all(stallions) = this will find all stallions
-    # we need to pass these results into the template
-    # (see line 48 stallion=stallion)
-    # HTML SECTION
-    # Use a for loop to render offspring to template
-    # { % for foal in offsprings % }
-    # <div>foal.name</div>
-    # <button href="/edit/foal._id">Foal name</button> ....
-    # { % endfor %}
-    #
-    # .update({_id: "one"})
     return render_template(
-        "offspringAI.html", stallions=stallions, offsprings=offsprings)
+        "offspringAI.html", offsprings=offsprings)
 
 
 @app.route("/offspringJR")
@@ -149,6 +135,7 @@ def editOffspring(offspring_id):
         }
         mongo.db.offsprings.update({"_id": ObjectId(offspring_id)}, submit)
         flash("Offspring successfully updated")
+        return redirect(url_for("offspringAI"))
 
     offspring = mongo.db.offsprings.find_one(
         {"_id": ObjectId(offspring_id)})
@@ -194,10 +181,12 @@ def logIn():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(
+              existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Hello and welcome, {}".format(request.form.get(
                     "username")))
+                return redirect(url_for("home"))
             else:
                 # invalid password match
                 flash("Incorrect username and/or password")
