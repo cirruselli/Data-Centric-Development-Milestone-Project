@@ -32,7 +32,8 @@ def home():
         procent = ownOffspring / totNumberOffspring
         # Save stallion with it's procent of tot.Offsprings in
         # an array that's sent to the webfront.
-        horsesStat.append([horse["name"].capitalize(), round(procent * 100, 1)])
+        horsesStat.append(
+            [horse["name"].capitalize(), round(procent * 100, 1)])
 
     return render_template("home.html", horsesStat=horsesStat)
 
@@ -75,9 +76,9 @@ def dimma():
 
 @app.route("/offspringAI")
 def offspringAI():
-    stallions = mongo.db.stallions.find()  # Hingstar
+    stallions = mongo.db.stallions.find()
     # stallion_id = stallions["_id"]
-    offsprings = mongo.db.offsprings.find()  # Föl
+    offsprings = mongo.db.offsprings.find()
     # foal_id = offsprings["_id"]
 
     # mongodb.find_all(stallions) = this will find all stallions
@@ -91,7 +92,8 @@ def offspringAI():
     # { % endfor %}
     #
     # .update({_id: "one"})
-    return render_template("offspringAI.html", stallions=stallions, offsprings=offsprings)
+    return render_template(
+        "offspringAI.html", stallions=stallions, offsprings=offsprings)
 
 
 @app.route("/offspringJR")
@@ -126,7 +128,8 @@ def addOffspring():
     offsprings = mongo.db.offsprings.find().sort("name", 1)
     stallions = mongo.db.stallions.find().sort("name", 1)
     print(stallions)
-    return render_template("addOffspring.html", offsprings=offsprings, stallions=stallions)
+    return render_template(
+        "addOffspring.html", offsprings=offsprings, stallions=stallions)
 
 
 @app.route("/editOffspring/<offspring_id>", methods=["GET", "POST"])
@@ -147,17 +150,11 @@ def editOffspring(offspring_id):
         mongo.db.offsprings.update({"_id": ObjectId(offspring_id)}, submit)
         flash("Offspring successfully updated")
 
-    addOffspring = mongo.db.offsprings.find_one({"_id": ObjectId(offspring_id)})
-    offsprings = mongo.db.offsprings.find().sort("name", 1)
-    return render_template("editOffspring.html", addOffspring=addOffspring, offsprings=offsprings)
-
-
-@app.route("/editOffspring/<offspringID>", methods=["GET", "POST"])
-def edit_offspring(offspringID):
-    editOffspring = mongo.db.offsprings.find_one({"_id": ObjectId("5fb66c3fc2c43c4867dce64a")})
-
-    offspring = mongo.db.offsprings.find().sort("name", 1)
-    return render_template("editOffspring.html", editOffspring=editOffspring, offspring=offspring)
+    offspring = mongo.db.offsprings.find_one(
+        {"_id": ObjectId(offspring_id)})
+    stallions = mongo.db.stallions.find().sort("name", 1)
+    return render_template(
+        "editOffspring.html", offspring=offspring, stallions=stallions)
 
 
 @app.route("/search")
@@ -197,10 +194,10 @@ def logIn():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Hello and welcome, {}".format(request.form.get("username")))
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Hello and welcome, {}".format(request.form.get(
+                    "username")))
             else:
                 # invalid password match
                 flash("Incorrect username and/or password")

@@ -2,51 +2,59 @@
 {% block content %}
 		<h1 class="text-center">Edit Offspring</h1>
 
-		<form method="POST" action="{{ url_for('editOffspring', offspring_id=addOffspring._id) }}">
+    <div class="center">
+		<form method="POST" action="{{ url_for('editOffspring', offspring_id=offspring._id) }}">
 			<div class="form-group">
 				<label for="name">Name</label>
-				<input type="text" class="form-control" name="name" id="name" minlength="1" maxlength="100" aria-describedby="name" placeholder="Enter name" required>
+				<input type="text" class="form-control" name="name" id="name" value="{{ offspring.name }}" minlength="1" maxlength="100" aria-describedby="name" placeholder="Enter name" required>
 			</div>
 			<div class="form-group">
 				<label for="birth_year">Birth Year</label>
-				<input type="text" class="form-control" name="birth_year" id="birth_year" minlength="1" maxlength="20" placeholder="Enter birth year, e.g. 2012" required>
+				<input type="text" class="form-control" name="birth_year" id="birth_year" value="{{ offspring.birth_year }}" minlength="1" maxlength="20" placeholder="Enter birth year, e.g. 2012" required>
 		  </div>
           <div class="form-group">
 				<label for="gender">Gender</label>
-				<input type="text" class="form-control" name="gender" id="gender" minlength="1" maxlength="20" aria-describedby="gender" placeholder="Enter gender" required>
+				<input type="text" class="form-control" name="gender" id="gender" value="{{ offspring.gender }}" minlength="1" maxlength="20" aria-describedby="gender" placeholder="Enter gender" required>
 			</div>
             <div class="form-group">
 				<label for="father">Father</label>
-				<input type="text" class="form-control" name="father" id="father" minlength="1" maxlength="200" aria-describedby="name" placeholder="Enter father" required>
+                <select name="stallions" id="stallions">
+                {% for stallion in stallions %}
+                    {% if stallion.name == offspring.father %}
+                    <option value="{{ stallion.name }}" selected>{{ stallion.name }}</option>
+                    {% else %}
+                    <option value="{{ stallion.name }}">{{ stallion.name }}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
 			</div>
 			<div class="form-group">
 				<label for="mother">Mother</label>
-				<input type="text" class="form-control" name="mother" id="mother" minlength="1" maxlength="200" placeholder="Enter mother" required>
+				<input type="text" class="form-control" name="mother" id="mother" value="{{ offspring.mother }}" minlength="1" maxlength="200" placeholder="Enter mother" required>
 		  </div>
 			<div class="form-group">
 				<label for="breed">Breed</label>
-				<input type="text" class="form-control" name="breed" id="breed" minlength="1" maxlength="200" placeholder="Enter breed" required>
+				<input type="text" class="form-control" name="breed" id="breed" value="{{ offspring.breed }}" minlength="1" maxlength="200" placeholder="Enter breed" required>
 		  </div>
           <div class="form-group">
 				<label for="country">Country</label>
-				<input type="text" class="form-control" name="country" id="country" minlength="1" maxlength="200" aria-describedby="country" placeholder="Enter country" required>
+				<input type="text" class="form-control" name="country" id="country" value="{{ offspring.country }}" minlength="1" maxlength="200" aria-describedby="country" placeholder="Enter country" required>
 			</div>
             <div class="form-group">
 				<label for="owner">Owner</label>
-				<input type="text" class="form-control" name="owner" id="owner" minlength="1" maxlength="200" aria-describedby="owner" placeholder="Enter owner" required>
+				<input type="text" class="form-control" name="owner" id="owner" value="{{ offspring.owner }}" minlength="1" maxlength="200" aria-describedby="owner" placeholder="Enter owner" required>
 			</div>
 			<div class="form-group">
 				<label for="achievements">Achievements</label>
-				<input type="text" class="form-control" name="achievements" id="achievements" minlength="1" maxlength="500" placeholder="Enter achievements" required>
+				<input type="text" class="form-control" name="achievements" id="achievements" value="{{ offspring.achievements }}" minlength="1" maxlength="500" placeholder="Enter achievements" required>
 		  </div>
 
             <div class="container-fluid text-center mt-5">
                 <div>
                     <button type="submit" class="btn btn-basic white mx-2">Edit Offspring</button>
-                    <a href="{{ url_for('addOffspring') }}" class="btn btn-danger red mx-2">Cancel Offspring</button>
+                    <a href="{{ url_for('addOffspring') }}" class="btn btn-danger red mx-2">Cancel Offspring</a>
                 </div>
             </div>
-            <div class="space">
-            </div>
         </form>
+    </div>
 {% endblock %}
