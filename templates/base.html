@@ -87,10 +87,11 @@
 		{% endwith %}
     </section>
 
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+    {% block content %}
+    {% endblock %}
+
+    <div class="space">
+    </div>
 
     <footer> 
 		<div class="footer-copyright text-center fixed-bottom py-3">© 2020 Copyright HorseNet

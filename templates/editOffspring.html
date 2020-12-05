@@ -18,7 +18,7 @@
 			</div>
             <div class="form-group">
 				<label for="father">Father</label>
-                <select name="stallions" id="stallions">
+                <select name="father" id="father">
                 {% for stallion in stallions %}
                     {% if stallion.name == offspring.father %}
                     <option value="{{ stallion.name }}" selected>{{ stallion.name }}</option>
@@ -51,8 +51,8 @@
 
             <div class="container-fluid text-center mt-5">
                 <div>
-                    <button type="submit" class="btn btn-basic white mx-2">Edit Offspring</button>
-                    <a href="{{ url_for('addOffspring') }}" class="btn btn-danger red mx-2">Cancel Offspring</a>
+                    <button type="submit" class="btn btn-basic white mx-2">Save Offspring</button>
+                    <a href="{{ url_for('offspringAI') }}" class="btn btn-danger red mx-2">Cancel Offspring</a>
                 </div>
             </div>
         </form>

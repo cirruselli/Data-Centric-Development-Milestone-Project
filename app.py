@@ -144,6 +144,13 @@ def editOffspring(offspring_id):
         "editOffspring.html", offspring=offspring, stallions=stallions)
 
 
+@app.route("/deleteOffspring/<offspring_id>")
+def deleteOffspring(offspring_id):
+    mongo.db.offsprings.remove({"_id": ObjectId(offspring_id)})
+    flash("Offspring successfully deleted")
+    return redirect(url_for("offspringAI"))
+
+
 @app.route("/search")
 def search():
     return render_template("search.html")
@@ -169,6 +176,8 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("home"))
+
     return render_template("register.html")
 
 

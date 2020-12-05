@@ -55,13 +55,12 @@ a.nav-link.white {
 /*---------------carousel -----------*/
 
 .carouselExampleControls {
-    position: relative;
     margin-top: 0px;
 }
 
-.carousel-resize {
+.carousel-item .img-fluid {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 
 /*---------------- headers ---------------*/
@@ -122,6 +121,7 @@ img.center-image {
     width: 50%;
 }
 
+
 /*---------------space for bottom of page------------- */
 
 .space {
@@ -137,13 +137,6 @@ img.center-image {
 }
 
 /*--------------- media queries-------------*/
-
-@media only screen and (max-width: 600px) {
-    .carousel-resize {
-        width: 100%;
-        height: 125px;
-    }
-}
 
 @media only screen and (max-width: 600px) {
     h1, h3 {
@@ -195,15 +188,3 @@ img.center-image {
          
     }
 }
-
-/*adding a css script for testing of offspring Tab--*/
-/* I dont remember from where I copied this */
-
-.file {
-  visibility: hidden;
-  position: absolute;
-}
-}
-
-
-
