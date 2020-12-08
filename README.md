@@ -1,7 +1,7 @@
 # HorseNet
 
-This is a website for stallion owners to follow their offsprings progressions and for the offspring owners to follow their horses siblings 
-and also the progression in both breeding and achievements of the stallions.
+My Milestone Project 3 presents a website for stallion owners to follow their offsprings progressions and for the offspring owners to 
+follow their horses siblings and also the progression in both breeding and achievements of the stallions.
 
  
 ## User Experience (UX)
@@ -10,11 +10,18 @@ The owner of an offspring can register an account and login to add the offspring
 the offspring whenever they want to, and also read about other offsprings (the CRUD functionality). This site is for breeders and I had an 
 idea of a family tree when I created this site. Although there is not a family tree there is at least some information on every 
 offspring about their mother and father. The stallions have information about how many offsprings each stallion has. There is a search-bar 
-for searching the offsprings. You can search on everything, for example search for one of the stallions and view all the offprings he has. 
+for searching the offsprings on the "offsprings A-I" page. You can search on everything, for example search for one of the stallions and view 
+all the offprings he has. The "add offspring" page has a dropdown list for the "father" to eliminate misspelling or adding of 
+another stallion. 
+
 This type of site could also be useful for breeding catteries and kennels. The idea of following the males (and also the females) 
-progression in breeding is interesting to know for both the owner and the owners of the offsprings. And this site acts a bit like a community
-for the offspring owners to come together. At the moment offsprings is only added to the "offspring A-I" page, since I have not done the 
-functionality for the "offspring J-R" nor the "offspring S-Z". These two last pages is empty for now.
+progression in breeding is interesting to know for both the stallion owner and the owners of the offsprings. And this site acts a bit like a community
+for the offspring owners to come together. At the moment offsprings is only added to the "offsprings A-I" page, since I have not done the 
+functionality for the "offsprings J-R" nor the "offsprings S-Z". These two last pages is empty for now. I decided to leave them up if I
+want to work on this project in the future. 
+
+I decided to not have a profile page for the user, instead the "add offspring" page serves this purpose since adding offsprings is the main 
+function for the user. 
 
 
 - ### User stories
@@ -26,24 +33,25 @@ functionality for the "offspring J-R" nor the "offspring S-Z". These two last pa
     - **Returning Visitor Goals**   
         1. As a Returning Visitor, I want to be able to search the site
         2. As a Returning Visitor, I want to be able to follow the stallions 
-
+        
     - **Frequent Visitor Goals**    
         1. As a Frequent Visitor, I want to be able to register an account and login 
         2. As a Frequent Visitor, I want to interact with the site and add content
+        3. As a Frequent Visitor, I want to view other offsprings related to my own offspring
 
 - ### Design 
     - **Color Scheme**   
+    The rose-red color scheme is for the love between horses and their owners and for the bloodbands that this site is representing,
     ([see colour affects here](http://www.colour-affects.co.uk/psychological-properties-of-colours))
-    The rose-red color scheme is for the love between horses and their owners and for the bloodbands that this site is representing. 
 
     - **Typography**    
     The Montserrat font is the main font used.
 
     - **Imagery**   
-    
+    The images in the carousels represents the stallions and some of the offsprings. 
     
     - **Interactivity**   
-    Users can register and login to add offsprings. This is reflected on the percent-bar on the homepage where statistics over how many
+    Users can register and login to add offsprings. This is later reflected on the percent-bar on the homepage where statistics over how many
     offsprings each stallion has i represented.
 
 - ### Wireframe
@@ -52,53 +60,88 @@ functionality for the "offspring J-R" nor the "offspring S-Z". These two last pa
 ## Features
 
 - ### Existing Features
+    - Feature 1 - allows users X to achieve Y, by having them fill out Z
+For some/all of your features, you may choose to reference the specific project files that implement them, 
+although this is entirely optional.
     - 
 
 - ### Features Left to Implement
-    - Offsprings should be listed alpfabetically on pages A-I, J-R and S-Z for easier navigation, even though you can search the offsprings.
+    - Offsprings should be listed alpfabetically on pages "offsprings A-I", "offspring J-R" and "offspring S-Z" for easier navigation, 
+    even though you can now search the offsprings.
     - Admin page perhaps...
 
 ## Technologies Used
-
+### Languages Used
 - HTML
 - CSS
 - JavaScript
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-- [Google fonts](https://fonts.google.com/)
+- Python3 
+
+### Frameworks, Libraries & Programs Used
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - for functionality
+- [Google fonts](https://fonts.google.com/) - Montserrat font
 - [Font Awesome](https://fontawesome.com/) - to use icons 
-- [Bootstrap](https://getbootstrap.com/) - carousel, navbar, forms
+- [Bootstrap](https://getbootstrap.com/) - to create carousel, navbar, forms
 - [Git](https://git-scm.com/) - was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) - is used to store the projects code after being pushed from Git.
-- [Heroku](https://dashboard.heroku.com/) - for deployment
+- [Heroku](https://dashboard.heroku.com/) - for deployment of the project
 - [Figma](https://www.figma.com/) - to create the wireframe
 
 ## Testing
 
 ### Testing User Stories from User Experience (UX) Section
 **First Time Visitor Goals**    
-1. As a First Time Visitor, I want to easily understand the main purpose of the site
-    i. Upon entering the site, users can easily navigate the site through the navigation bar.
+1. As a First Time Visitor, I want to easily understand the main purpose of the site    
+    i. Upon entering the site, users can easily navigate the site through the navigation bar.     
     ii. On the start/home page there is statistics about how many procent of the offsprings each stallion has.
 
-
 2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.   
-    i. At the top of each page there is a navigation bar, each link describes what page they will end up at.
+    i. At the top of each page there is a navigation bar, each link describes what page they will end up at.    
     ii. On both the register and login page, the page refreshes and the user is brought to the top of the homepage 
     where the navigation bar is.
  
-
 **Returning Visitor Goals**   
-1. As a Returning Visitor, I want to be able to search the site
-    i. There is a search-bar on the offspringAI page. 
+1. As a Returning Visitor, I want to be able to search the site       
+    i. At the moment there is a search-bar on the "offspring A-I" page where you can search the information about the offsprings. 
+
+2. As a Returning Visitor, I want to be able to follow the stallions    
+    i. This is possbile on the homepage where statistics over how many offsprings each stallion has is represented with percentage.    
+    ii. Each stallion has its own page with information such as how many offsprings and achievements. 
 
 **Frequent Visitor Goals**    
-1. 
+1. As a Frequent Visitor, I want to be able to register an account and login     
+    i. Via the navbar the user can register and also login to the site.        
+    ii. When registered or logged in the page redirect to homepage.
+
+2. As a Frequent Visitor, I want to interact with the site and add content    
+    i. When logged in users can add offsprings to the "offspring A-I" page via a form on the "add offspring" page.     
+    ii. The number of offsprings is reflected on the homepage where each stallion has a percentbar.      
+    iii. Each stallion has its own page where number of offsprings i represented. 
+
+3. As a Frequent Visitor, I want to view other offsprings related to my own offspring      
+    i. The page "offspring A-I" presents all offsprings        
+    ii. The "offspring A-I" page has a search function where you can search for the stallion of the offspring and get all
+    other offsprings related to that stallion.
 
 ### Further testing
 * Most testing was done throughout development, and it was manual tests. 
+1. Homepage:    
+    i. Go to the "home" page    
+    ii. See how many percentage the stallion to your offspring has.
+    iii. Go to "add offspring" page.
+    iiii. Add your offspring by filling out the form.
+    iiiii. Press "Save offspring".
+    iiiiii. Go back to "home" page.
+    iiiiiii. See that the percentage of the stallion to your offspring has changed. 
 
-* Different web-browsers (Opera, Firefox, Microsoft Edge, Chrome) and Samsung galaxy 9 - Android have been used to check the website's layout and that 
-    the site works well on different devices and screensizes. Where needed I used media query to fix any responsiveness issues.
+
+
+    ii. Try to submit the empty form and verify that an error message about the required fields appears    
+    iii. Try to submit the form with an invalid email address and verify that a relevant error message appears    
+    iiii.Try to submit the form with all inputs valid and verify that a success message appears.   
+
+* Different web-browsers (Opera, Firefox, Microsoft Edge, Chrome) and Samsung galaxy 9 - Android have been used to check the website's 
+    layout and that the site works well on different devices and screensizes. Where needed I used media query to fix any responsiveness issues.
 
 
 ### Validation 
@@ -125,7 +168,7 @@ All content was written by the developer and exeptions with copied code is comme
 The photos used in this site were obtained from:
 - First picture in the carousel of [Balegro](https://www.naturepl.com/cache/pcache2/01524326.jpg), second picture of [Balegro](https://previews.agefotostock.com/previewimage/medibigoff/8c3efac1b7ca508c53cb1b168839eb48/ssj-h-81062098.jpg), third picture of [Balegro](https://media.istockphoto.com/photos/beautiful-american-quarter-horse-stallion-picture-id106413072)
 
-- First picture ine the carousel of [Dimma](https://image.freepik.com/free-photo/american-quarter-horse-buckskin-stallion_74692-145.jpg), second picture of [Dimma](https://thumbs.dreamstime.com/z/wild-stallion-nature-running-gallop-147893469.jpg), third picture of [Dimma](https://media.istockphoto.com/photos/black-stallion-rearing-up-picture-id1034305800)
+- First picture in the carousel of [Dimma](https://image.freepik.com/free-photo/american-quarter-horse-buckskin-stallion_74692-145.jpg), second picture of [Dimma](https://thumbs.dreamstime.com/z/wild-stallion-nature-running-gallop-147893469.jpg), third picture of [Dimma](https://media.istockphoto.com/photos/black-stallion-rearing-up-picture-id1034305800)
 
 - First picture in the carousel of [Offset](https://image.shutterstock.com/image-photo/portrait-running-stallion-black-friesian-260nw-1246577917.jpg), second picture of [Offset](https://c8.alamy.com/comp/XA6CEX/pure-spanish-horse-andalusian-gray-stallion-looking-over-a-hedge-germany-XA6CEX.jpg), third picture of [Offset](https://image.shutterstock.com/image-photo/portrait-brown-stallion-percheron-beautiful-260nw-1214364226.jpg)
 
