@@ -26,17 +26,20 @@
     <div class="center">
         <div class="search-div">
             <form action="{{url_for('search')}}" method="POST" class="search-form">
-                <div class="search-box">
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Offspring(s)</label>
-                </div>
-                <div>
-                    <a href="{{ url_for('offspringAI') }}" class="search-big-red-button">Reset</a>
-                    <button type="submit">Search</button>
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search Offspring(s)" required>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn white">Search</button>
+                        <a href="{{ url_for('offspringAI') }}" class="btn red">Reset</a>
+                    </div>
                 </div>
             </form>
         </div>
         <div class="search-result" >Number of results: {{ offsprings|count }}</div>
+        <br>
+        <br>
         {% for foal in offsprings %}
             <div class="offspring-data">
                 <h4>Name: {{ foal.name|capitalize }}</h4>
