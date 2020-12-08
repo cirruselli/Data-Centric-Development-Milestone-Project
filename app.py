@@ -76,7 +76,7 @@ def dimma():
 
 @app.route("/offspringAI")
 def offspringAI():
-    offsprings = mongo.db.offsprings.find().sort("name", 1)
+    offsprings = list(mongo.db.offsprings.find().sort("name", 1))
 
     return render_template(
         "offspringAI.html", offsprings=offsprings)
@@ -151,9 +151,13 @@ def deleteOffspring(offspring_id):
     return redirect(url_for("offspringAI"))
 
 
-@app.route("/search")
+@app.route("/search", methods=["GET", "POST"])
 def search():
-    return render_template("search.html")
+    if request.method == "POST":
+        query = request.form.get("query")
+        offsprings = list(mongo.db.offsprings.find(
+         {"$text": {"$search": query}}))
+        return render_template("offspringAI.html", offsprings=offsprings)
 
 
 @app.route("/register", methods=["GET", "POST"])

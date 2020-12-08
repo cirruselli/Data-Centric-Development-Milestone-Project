@@ -24,17 +24,30 @@
     <h1>Offsprings</h1>
 
     <div class="center">
+        <div class="search-div">
+            <form action="{{url_for('search')}}" method="POST" class="search-form">
+                <div class="search-box">
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Offspring(s)</label>
+                </div>
+                <div>
+                    <a href="{{ url_for('offspringAI') }}" class="search-big-red-button">Reset</a>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="search-result" >Number of results: {{ offsprings|count }}</div>
         {% for foal in offsprings %}
             <div class="offspring-data">
-                <h4>Name: {{ foal.name }}</h4>
+                <h4>Name: {{ foal.name|capitalize }}</h4>
                 <h4>Birth Year: {{ foal.birth_year }}</h4>
-                <h4>Gender: {{ foal.gender }}</h4>
-                <h4>Father: {{ foal.father }}</h4>
-                <h4>Mother: {{ foal.mother }}</h4>
-                <h4>Breed: {{ foal.breed }}</h4>
-                <h4>Country: {{ foal.country }}</h4>
-                <h4>Owner: {{ foal.owner }}</h4>
-                <h4>Achievements: {{ foal.achievements }} </h4>
+                <h4>Gender: {{ foal.gender|capitalize }}</h4>
+                <h4>Father: {{ foal.father|capitalize }}</h4>
+                <h4>Mother: {{ foal.mother|capitalize }}</h4>
+                <h4>Breed: {{ foal.breed|capitalize }}</h4>
+                <h4>Country: {{ foal.country|capitalize }}</h4>
+                <h4>Owner: {{ foal.owner|capitalize }}</h4>
+                <h4>Achievements: {{ foal.achievements|capitalize }} </h4>
                 {% if session.user|lower == foal.created_by|lower %}
                 <a href="{{ url_for('editOffspring', offspring_id=foal._id) }}" class="btn btn-basic white">Edit</a>
                 <a href="{{ url_for('deleteOffspring', offspring_id=foal._id) }}" class="btn btn-basic red">Delete</a>

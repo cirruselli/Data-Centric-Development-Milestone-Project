@@ -3,13 +3,13 @@
 
     <img class="center-image" src="{{ url_for('static', filename = 'images/offset2.jpg') }}" alt="offset" />
     <div class="center">
-        <h4>Name: {{stallion.name}}</h4>
+        <h4>Name: {{stallion.name|capitalize }}</h4>
         <h4>Birth Year: {{ stallion.birth_year }}</h4>
-        <h4>Gender: {{ stallion.gender }}</h4>
-        <h4>Breed: {{ stallion.breed }}</h4>
-        <h4>Country: {{ stallion.country }}</h4>
-        <h4>Owner: {{ stallion.owner }}</h4>
+        <h4>Gender: {{ stallion.gender|capitalize }}</h4>
+        <h4>Breed: {{ stallion.breed|capitalize }}</h4>
+        <h4>Country: {{ stallion.country|capitalize }}</h4>
+        <h4>Owner: {{ stallion.owner|capitalize }}</h4>
         <h4>Number of offsprings: {{ offspring }}</h4>
-        <h4>Achievements: {{ stallion.achievements }} </h4>
+        <h4>Achievements: {{ stallion.achievements|capitalize }} </h4>
     </div>
 {% endblock %}

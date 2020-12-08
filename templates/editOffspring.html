@@ -21,9 +21,9 @@
                 <select name="father" id="father">
                 {% for stallion in stallions %}
                     {% if stallion.name == offspring.father %}
-                    <option value="{{ stallion.name }}" selected>{{ stallion.name }}</option>
+                    <option value="{{ stallion.name }}" selected>{{ stallion.name|capitalize }}</option>
                     {% else %}
-                    <option value="{{ stallion.name }}">{{ stallion.name }}</option>
+                    <option value="{{ stallion.name }}">{{ stallion.name|capitalize }}</option>
                     {% endif %}
                 {% endfor %}
                 </select>
