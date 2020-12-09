@@ -52,8 +52,8 @@
                 <h4>Owner: {{ foal.owner|capitalize }}</h4>
                 <h4>Achievements: {{ foal.achievements|capitalize }} </h4>
                 {% if session.user|lower == foal.created_by|lower %}
-                <a href="{{ url_for('editOffspring', offspring_id=foal._id) }}" class="btn btn-basic white">Edit</a>
-                <a href="{{ url_for('deleteOffspring', offspring_id=foal._id) }}" class="btn btn-basic red">Delete</a>
+                <a href="{{ url_for('editOffspring', offspring_id=foal._id) }}" class="btn white">Edit</a>
+                <a href="{{ url_for('deleteOffspring', offspring_id=foal._id) }}" onclick="return confirmDelete()" class="btn red">Delete</a>                   
                 {% endif %}
                 <br>
                 <br>

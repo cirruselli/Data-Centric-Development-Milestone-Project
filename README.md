@@ -6,19 +6,19 @@ follow their horses siblings and also the progression in both breeding and achie
  
 ## User Experience (UX)
 
-The owner of an offspring can register an account and login to add the offspring to the database. The same person can also edit and delete
-the offspring whenever they want to, and also read about other offsprings (the CRUD functionality). This site is for breeders and I had an 
-idea of a family tree when I created this site. Although there is not a family tree there is at least some information on every 
+The owner of an offspring can register an account and login to add the offspring to the database. (At the moment offsprings is only added 
+to the "offsprings A-I" page, since I have not done the functionality for the "offsprings J-R" nor the "offsprings S-Z". These two 
+last pages is empty for now. I decided to leave them up if I want to work on this project in the future.) The same person can also edit 
+and delete the offspring whenever they want to, and also read about other offsprings (the CRUD functionality). This site is for breeders 
+and I had an idea of a family tree when I created this site. Although there is not a family tree there is at least some information on every 
 offspring about their mother and father. The stallions have information about how many offsprings each stallion has. There is a search-bar 
 for searching the offsprings on the "offsprings A-I" page. You can search on everything, for example search for one of the stallions and view 
-all the offprings he has. The "add offspring" page has a dropdown list for the "father" to eliminate misspelling or adding of 
+all the offprings he has. The "add offspring" page has a dropdown list for the option "father" to eliminate misspelling or adding of 
 another stallion. 
 
 This type of site could also be useful for breeding catteries and kennels. The idea of following the males (and also the females) 
 progression in breeding is interesting to know for both the stallion owner and the owners of the offsprings. And this site acts a bit like a community
-for the offspring owners to come together. At the moment offsprings is only added to the "offsprings A-I" page, since I have not done the 
-functionality for the "offsprings J-R" nor the "offsprings S-Z". These two last pages is empty for now. I decided to leave them up if I
-want to work on this project in the future. 
+for the offspring owners to come together. 
 
 I decided to not have a profile page for the user, instead the "add offspring" page serves this purpose since adding offsprings is the main 
 function for the user. 
@@ -60,10 +60,13 @@ function for the user.
 ## Features
 
 - ### Existing Features
-    - Feature 1 - allows users X to achieve Y, by having them fill out Z
-For some/all of your features, you may choose to reference the specific project files that implement them, 
-although this is entirely optional.
-    - 
+    - Homepage - allows users to follow statistics for the stallions
+    - Stallion pages - information about each of the four stallions
+    - Offspring A-I page - presents all offsprings. Has a search-function. Edit and delete button for each offspring the user has added. 
+    - Add offspring page - users can add offsprings by filling out the form. Option "Father" has a dropdown list to eliminate misspelling or adding of another stallion.
+    - Register - click here to register to the page.
+    - Log in - click here when you have a registered account.
+    - Log out - click here when you want to log out from the page.
 
 - ### Features Left to Implement
     - Offsprings should be listed alpfabetically on pages "offsprings A-I", "offspring J-R" and "offspring S-Z" for easier navigation, 
@@ -84,8 +87,9 @@ although this is entirely optional.
 - [Bootstrap](https://getbootstrap.com/) - to create carousel, navbar, forms
 - [Git](https://git-scm.com/) - was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) - is used to store the projects code after being pushed from Git.
+- [MongoDB](https://cloud.mongodb.com) - database used
 - [Heroku](https://dashboard.heroku.com/) - for deployment of the project
-- [Figma](https://www.figma.com/) - to create the wireframe
+- [Figma](https://www.figma.com/) - to create the wireframes during the design process
 
 ## Testing
 
@@ -126,13 +130,13 @@ although this is entirely optional.
 ### Further testing
 * Most testing was done throughout development, and it was manual tests. 
 1. Homepage:    
-    i. Go to the "home" page    
-    ii. See how many percentage the stallion to your offspring has.
-    iii. Go to "add offspring" page.
-    iiii. Add your offspring by filling out the form.
-    iiiii. Press "Save offspring".
-    iiiiii. Go back to "home" page.
-    iiiiiii. See that the percentage of the stallion to your offspring has changed. 
+    i. Go to the "home" page      
+    ii. See how many percentage the stallion to your offspring has.     
+    iii. Go to "add offspring" page.     
+    iiii. Add your offspring by filling out the form.   
+    iiiii. Press "Save offspring".    
+    iiiiii. Go back to "home" page.    
+    iiiiiii. See that the percentage of the stallion to your offspring has changed.     
 
 
 
