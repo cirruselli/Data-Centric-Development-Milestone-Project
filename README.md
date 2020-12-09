@@ -3,7 +3,6 @@
 My Milestone Project 3 presents a website for stallion owners to follow their offsprings progressions and for the offspring owners to 
 follow their horses siblings and also the progression in both breeding and achievements of the stallions.
 
- 
 ## User Experience (UX)
 
 The owner of an offspring can register an account and login to add the offspring to the database. (At the moment offsprings is only added 
@@ -13,12 +12,12 @@ and delete the offspring whenever they want to, and also read about other offspr
 and I had an idea of a family tree when I created this site. Although there is not a family tree there is at least some information on every 
 offspring about their mother and father. The stallions have information about how many offsprings each stallion has. There is a search-bar 
 for searching the offsprings on the "offsprings A-I" page. You can search on everything, for example search for one of the stallions and view 
-all the offprings he has. The "add offspring" page has a dropdown list for the option "father" to eliminate misspelling or adding of 
-another stallion. 
+all the offprings he has. The offsprings' names is sorted in alphabetically order for easier overview. The "add offspring" page has a dropdown 
+list for the option "father" to eliminate misspelling or adding of another stallion. 
 
 This type of site could also be useful for breeding catteries and kennels. The idea of following the males (and also the females) 
-progression in breeding is interesting to know for both the stallion owner and the owners of the offsprings. And this site acts a bit like a community
-for the offspring owners to come together. 
+progression in breeding is interesting to know for both the stallion owner and the owners of the offsprings. And this site acts a bit like a 
+community for the offspring owners to come together. 
 
 I decided to not have a profile page for the user, instead the "add offspring" page serves this purpose since adding offsprings is the main 
 function for the user. 
@@ -55,13 +54,13 @@ function for the user.
     offsprings each stallion has i represented.
 
 - ### Wireframe
-    The wireframe is included as pdf files in the project itself (in a separate directory called wireframes).
+    The wireframes is included as pdf files in the project itself (in a separate directory called wireframes).
 
 ## Features
 
 - ### Existing Features
     - Homepage - allows users to follow statistics for the stallions
-    - Stallion pages - information about each of the four stallions
+    - Stallion pages (Balegro, Sunrise, Offset, Dimma) - information about each of the four stallions
     - Offspring A-I page - presents all offsprings. Has a search-function. Edit and delete button for each offspring the user has added. 
     - Add offspring page - users can add offsprings by filling out the form. Option "Father" has a dropdown list to eliminate misspelling or adding of another stallion.
     - Register - click here to register to the page.
@@ -125,24 +124,62 @@ function for the user.
 3. As a Frequent Visitor, I want to view other offsprings related to my own offspring      
     i. The page "offspring A-I" presents all offsprings        
     ii. The "offspring A-I" page has a search function where you can search for the stallion of the offspring and get all
-    other offsprings related to that stallion.
+    other offsprings related to that stallion. You can search for the mother as well.
 
 ### Further testing
 * Most testing was done throughout development, and it was manual tests. 
 1. Homepage:    
     i. Go to the "home" page      
-    ii. See how many percentage the stallion to your offspring has.     
-    iii. Go to "add offspring" page.     
-    iiii. Add your offspring by filling out the form.   
-    iiiii. Press "Save offspring".    
-    iiiiii. Go back to "home" page.    
-    iiiiiii. See that the percentage of the stallion to your offspring has changed.     
+    ii. See how many percentages the stallion to your offspring has     
+    iii. Go to "add offspring" page     
+    iiii. Add your offspring by filling out the form   
+    iiiii. Press "Save offspring"    
+    iiiiii. Go back to "home" page  
+    iiiiiii. Verify that the percentage of the stallion to your offspring has changed   
 
+2. Stallions page (Balegro, Sunrise, Offset, Dimma):   
+    i. Go to one of the stallions page, eg Balegro          
+    ii. See the number of offsprings Balegro has       
+    iii. Go to "add offspring" page       
+    iiii. Add your offspring by filling out the form - make sure to choose Balegro as the father         
+    iiiii. Press "Save offspring"      
+    iiiiiii. Go back to "Balegro" page          
+    iiiiiiii. Verify that the number of offspring has increased with one offspring       
 
+3. Offsprings A-I page:     
+    i. Search the page with a word that you now exists in the offsprings information (baloo)    
+    ii. See the number of results (1)
+    ![2020-12-09 (1)](https://user-images.githubusercontent.com/60824715/101657590-5ef16e80-3a44-11eb-87f4-bf027db412a2.png)    
+    iii. Search the page with a word you know not exists in the offsprings information    
+    iiii. See the number of results (0)    
+    iiiii. Press "reset" to see all offsprings again
 
-    ii. Try to submit the empty form and verify that an error message about the required fields appears    
-    iii. Try to submit the form with an invalid email address and verify that a relevant error message appears    
-    iiii.Try to submit the form with all inputs valid and verify that a success message appears.   
+4. Add offspring page:    
+    i. Try to submit the empty form and verify that a message appears "Fill in this field"
+    ![2020-12-09 (4)](https://user-images.githubusercontent.com/60824715/101660899-f5735f00-3a47-11eb-8229-f23941465370.png)     
+    ii. Try to submit the form with all fields filled in and verify that a success message appears     
+    ![2020-12-09 (5)](https://user-images.githubusercontent.com/60824715/101661627-ce695d00-3a48-11eb-9cb9-e86ffe2f823c.png)
+    ![2020-12-09 (6)](https://user-images.githubusercontent.com/60824715/101661644-d1644d80-3a48-11eb-8122-be671c7db01a.png)
+
+5. Register:    
+    i. Click "register" on the navbar     
+    ii. Try to register a short username/password and verify that a error message appears     
+    ![2020-12-09 (7)](https://user-images.githubusercontent.com/60824715/101663137-9bc06400-3a4a-11eb-93f4-61793dcd2bb6.png)
+    iii. Try to register a longer username/password and verify that registration is successful and redirect to homepage     
+    ![2020-12-09 (8)](https://user-images.githubusercontent.com/60824715/101663315-d9bd8800-3a4a-11eb-8b11-2b15abaf37b2.png)
+    ![2020-12-09 (9)](https://user-images.githubusercontent.com/60824715/101663347-e510b380-3a4a-11eb-96b1-c532f335c9f1.png)
+
+6. Log in:     
+    i. Click "Log in" on the navbar    
+    ii. Try to log in with an invalid username and/or password and verify that a relevant error message appears    
+    ![2020-12-09 (10)](https://user-images.githubusercontent.com/60824715/101664660-63ba2080-3a4c-11eb-90c9-127c2c2d19bb.png)    
+    iii. Try to log in with a valid username and password and verify that a success message appears and redirects to homepage    
+    ![2020-12-09 (11)](https://user-images.githubusercontent.com/60824715/101664863-9f54ea80-3a4c-11eb-8c27-9f435c0b82e5.png)
+
+7. Log out:   
+    i. Click "Log out" on the navbar     
+    ii. Verify a success message appear
+
 
 * Different web-browsers (Opera, Firefox, Microsoft Edge, Chrome) and Samsung galaxy 9 - Android have been used to check the website's 
     layout and that the site works well on different devices and screensizes. Where needed I used media query to fix any responsiveness issues.
@@ -154,7 +191,8 @@ function for the user.
     and [JavaScript validator](https://jshint.com/) respectively.
     
 ### Known bugs
-*  
+*  Perhaps I could have left the media query for the carousel to make the images the same height. I decided to delete the media queries
+    and let the images have different heights.
 
 ## Deployment
 
