@@ -82,16 +82,6 @@ def offspringAI():
         "offspringAI.html", offsprings=offsprings)
 
 
-@app.route("/offspringJR")
-def offspringJR():
-    return render_template("offspringJR.html")
-
-
-@app.route("/offspringSZ")
-def offspringSZ():
-    return render_template("offspringSZ.html")
-
-
 @app.route("/addOffspring", methods=["GET", "POST"])
 def addOffspring():
     if request.method == "POST":

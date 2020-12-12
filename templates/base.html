@@ -36,16 +36,8 @@
 							<a class="dropdown-item" href="{{ url_for('dimma') }}">Dimma</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Offsprings
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="{{ url_for('offspringAI') }}">A-I</a>
-							<a class="dropdown-item" href="{{ url_for('offspringJR') }}">J-R</a>
-							<a class="dropdown-item" href="{{ url_for('offspringSZ') }}">S-Z</a>
-						</div>
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('offspringAI') }}">Offsprings</a>
 					</li>
                     {% if session.user %}
 					<li class="nav-item active">
