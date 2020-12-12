@@ -20,7 +20,7 @@
 				<label for="father">Father</label>
                 <select name="father" id="father">
                 {% for stallion in stallions %}
-                    <option value="{{ stallion.name }}">{{ stallion.name }}</option>
+                    <option value="{{ stallion.name }}">{{ stallion.name|capitalize }}</option>
                 {% endfor %}
                 </select>
 			</div>

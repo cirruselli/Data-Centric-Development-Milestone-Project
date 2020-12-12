@@ -86,15 +86,15 @@ def offspringAI():
 def addOffspring():
     if request.method == "POST":
         offspring = {
-            "name": request.form.get("name"),
+            "name": request.form.get("name").lower(),
             "birth_year": request.form.get("birth_year"),
-            "gender": request.form.get("gender"),
-            "father": request.form.get("father"),
-            "mother": request.form.get("mother"),
-            "breed": request.form.get("breed"),
-            "country": request.form.get("country"),
-            "owner": request.form.get("owner"),
-            "achievements": request.form.get("achievements"),
+            "gender": request.form.get("gender").lower(),
+            "father": request.form.get("father").lower(),
+            "mother": request.form.get("mother").lower(),
+            "breed": request.form.get("breed").lower(),
+            "country": request.form.get("country").lower(),
+            "owner": request.form.get("owner").lower(),
+            "achievements": request.form.get("achievements").lower(),
             "created_by": session["user"]
         }
         mongo.db.offsprings.insert_one(offspring)
@@ -112,15 +112,15 @@ def addOffspring():
 def editOffspring(offspring_id):
     if request.method == "POST":
         submit = {
-            "name": request.form.get("name"),
+            "name": request.form.get("name").lower(),
             "birth_year": request.form.get("birth_year"),
-            "gender": request.form.get("gender"),
-            "father": request.form.get("father"),
-            "mother": request.form.get("mother"),
-            "breed": request.form.get("breed"),
-            "country": request.form.get("country"),
-            "owner": request.form.get("owner"),
-            "achievements": request.form.get("achievements"),
+            "gender": request.form.get("gender").lower(),
+            "father": request.form.get("father").lower(),
+            "mother": request.form.get("mother").lower(),
+            "breed": request.form.get("breed").lower(),
+            "country": request.form.get("country").lower(),
+            "owner": request.form.get("owner").lower(),
+            "achievements": request.form.get("achievements").lower(),
             "created_by": session["user"]
         }
         mongo.db.offsprings.update({"_id": ObjectId(offspring_id)}, submit)
