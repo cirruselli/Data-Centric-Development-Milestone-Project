@@ -3,6 +3,7 @@
 1. As a First Time Visitor, I want to easily understand the main purpose of the site    
     i. Upon entering the site, users can easily navigate the site through the navigation bar.     
     ii. On the start/home page there is statistics about how many percent of the offsprings each stallion has.
+    iii. When registered and logged in you can add an offspring. 
 
 2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.   
     i. At the top of each page there is a navigation bar, each link describes what page they will end up at.    
@@ -52,7 +53,7 @@
     iiiiiii. Go back to "Balegro" page          
     iiiiiiii. Verify that the number of offspring has increased with one offspring       
 
-3. Offsprings A-I page:     
+3. Offsprings page:     
     i. Search the page with a word that you now exists in the offsprings information (baloo)    
     ii. See the number of results (1)
     ![2020-12-09 (1)](https://user-images.githubusercontent.com/60824715/101657590-5ef16e80-3a44-11eb-87f4-bf027db412a2.png)    
