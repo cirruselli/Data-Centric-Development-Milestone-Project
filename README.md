@@ -80,8 +80,8 @@ The owner of an offspring can edit and delete the added offspring whenever they 
 
 **Add offspring page**    
 The "add offspring" page is only visible for a registered and logged in user. To add an offspring the page has a form to fill out with the 
-following options: name, birth year, gender, father, mother, breed, country, owner and achievements.
-There is a dropdown list for the option "father" to eliminate misspelling or adding of another stallion. 
+following fields: name, birth year, gender, father, mother, breed, country, owner and achievements.
+There is a dropdown list for the field "father" to eliminate misspelling or adding of another stallion. 
 
 - ### Existing Features
     - Homepage - allows users to follow statistics for the stallions
@@ -168,7 +168,7 @@ To deploy this project to Heroku, the following steps were taken:
 12. In the Heroku dashboard, click "Connect"
 13. In the "Automatic deploys" section choose "master" branch and click "Enable Automatic Deploys"
 14. In the "Manual Deployment" section, make sure the master branch is selected and then click "Deploy Branch".
-15. The site is now deployed. 
+15. The project is now deployed. 
 
 ### How to run this project locally
 To clone this project into Gitpod, use the following steps:
