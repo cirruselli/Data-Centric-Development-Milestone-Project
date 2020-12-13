@@ -126,13 +126,6 @@ the media queries.
 Testing information can be found in separate [TESTING.md file](https://github.com/cirruselli/Data-Centric-Development-Milestone-Project/blob/master/TESTING.md)
 
 ## Deployment
-So you need to write up:
-- what needs to be installed
-- how to create `requirements.txt` and `Procfile`,
-- how to create a new app on heroku
-- How to push to heroku or link to guthub depending on which method you used.
-- How to set config vars on heroku
-- Final steps you took to deploy it.
 
 ### GitHub Pages Deployment
 To deploy this project to GitHub Pages, the following steps is taken:
