@@ -12,7 +12,7 @@
  
 **Returning Visitor Goals**   
 1. As a Returning Visitor, I want to be able to search the site       
-    i. At the moment there is a search-bar on the "offspring A-I" page where you can search the information about the offsprings. 
+    i. At the moment there is a search-bar on the "offsprings" page where you can search the information about the offsprings. 
 
 2. As a Returning Visitor, I want to be able to follow the stallions    
     i. This is possbile on the homepage where statistics over how many offsprings each stallion has is represented with percentage.    
@@ -24,13 +24,13 @@
     ii. When registered or logged in the page redirect to homepage.
 
 2. As a Frequent Visitor, I want to interact with the site and add content    
-    i. When logged in users can add offsprings to the "offspring A-I" page via a form on the "add offspring" page.     
+    i. When logged in users can add offsprings to the "offsprings" page via a form on the "add offspring" page.     
     ii. The number of offsprings is reflected on the homepage where each stallion has a percentbar.      
     iii. Each stallion has its own page where number of offsprings i represented. 
 
 3. As a Frequent Visitor, I want to view other offsprings related to my own offspring      
-    i. The page "offspring A-I" presents all offsprings        
-    ii. The "offspring A-I" page has a search function where you can search for the stallion of the offspring and get all
+    i. The "offsprings" page presents all offsprings        
+    ii. The "offsprings" page has a search function where you can search for the stallion of the offspring and get all
     other offsprings related to that stallion. You can search for the mother as well.
 
 ### Further testing
@@ -106,7 +106,7 @@
     Balegro page:
     ![2020-12-11 (2)](https://user-images.githubusercontent.com/60824715/101905445-c4b23780-3bb7-11eb-8d12-7d875b037797.png)
 
-    Offsprings A-I page:
+    Offsprings page:
     ![2020-12-11 (3)](https://user-images.githubusercontent.com/60824715/101905915-73567800-3bb8-11eb-83a6-23395eeaff36.png)
 
     Add offspring page:
